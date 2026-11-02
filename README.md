@@ -1,5 +1,7 @@
 # Discord video size data
 
+**Archived on Zenodo with a DOI — cite [10.5281/zenodo.23904987](https://doi.org/10.5281/zenodo.23904987) if you reuse these tables.**
+
 Discord's per-file upload limits, the bitrate those limits leave you, and measured encodes to check the arithmetic against — as CSV, plus a small calculator.
 
 Every number here traces back to a file in [`records/`](records/): either an official Discord page (URL and quoted text in the CSV) or an encode that was actually run, with input sha256, encoder settings, output byte count and elapsed time.

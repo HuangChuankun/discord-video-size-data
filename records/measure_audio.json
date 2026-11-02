@@ -1,0 +1,9 @@
+{
+ "src_bytes": 5407489,
+ "audio96": 2026752,
+ "audio64": 1986783,
+ "audio32": 1946652,
+ "delta_96_vs_64_pct": 2.01,
+ "delta_64_vs_32_pct": 2.06,
+ "audio64_bytes_on_10s": 40131
+}

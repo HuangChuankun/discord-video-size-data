@@ -1,0 +1,21 @@
+{
+ "t1_60fps_crf23": 7320714,
+ "t1_30fps_crf23": 6587480,
+ "t1_delta_pct": 10.0,
+ "t2_720p_crf23": 3498466,
+ "t2_delta_pct": 46.9,
+ "t3_2pass_1613k": 2080920,
+ "t3_target_bytes": 2097152,
+ "t3_error_pct": -0.8,
+ "t3_crf_size_bytes": 6587480,
+ "t3_crf_vs_target_pct": 214.1,
+ "t4_audio96": 1898217,
+ "t4_audio64": 1898217,
+ "t4_audio32": 1898217,
+ "t4_96_minus_64_pct": 0.0,
+ "t4_64_minus_32_pct": 0.0,
+ "t5_hevc_crf23": 6568555,
+ "t5_hevc_saving_pct": 0.3,
+ "t6_2pass_1451k": 1878809,
+ "t6_size_delta_pct": 9.7
+}

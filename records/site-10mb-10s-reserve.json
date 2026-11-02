@@ -1,0 +1,91 @@
+{
+  "label": "site-10mb-10s-reserve",
+  "ranAt": "2026-11-02T13:56:46.767Z",
+  "engine": "ffmpeg.wasm (site vendor/ffmpeg-core.wasm, 32,129,114 bytes)",
+  "codec": "libx264, preset veryfast",
+  "input": {
+    "path": "sites/discord-video-compressor/test/test-clip.mp4",
+    "bytes": 15942580,
+    "sha256": "e5b7ec5bcf1e548f792e1f908ff4c74fbef693126fa55dfc0a562baf6b3a3a54"
+  },
+  "targetBytes": 10485760,
+  "mediaBudgetBytes": 10422845,
+  "containerReserve": 0.006,
+  "durationSeconds": 10,
+  "audioKbps": 64,
+  "attempts": [
+    {
+      "attempt": 1,
+      "videoKbps": 8274,
+      "audioKbps": 64,
+      "bytes": 10880120,
+      "overTarget": true,
+      "seconds": 77,
+      "args": "-hide_banner -nostdin -y -i input.mp4 -c:v libx264 -preset veryfast -b:v 8274k -vf scale=trunc(iw/2)*2:trunc(ih/2)*2 -pix_fmt yuv420p -c:a aac -b:a 64k -ac 2 -movflags +faststart output.mp4"
+    },
+    {
+      "attempt": 2,
+      "videoKbps": 7032,
+      "audioKbps": 64,
+      "bytes": 9253520,
+      "overTarget": false,
+      "seconds": 63,
+      "args": "-hide_banner -nostdin -y -i input.mp4 -c:v libx264 -preset veryfast -b:v 7032k -vf scale=trunc(iw/2)*2:trunc(ih/2)*2 -pix_fmt yuv420p -c:a aac -b:a 64k -ac 2 -movflags +faststart output.mp4"
+    }
+  ],
+  "output": {
+    "path": "site-10mb-10s-reserve.mp4",
+    "bytes": 9253520
+  },
+  "totalSeconds": 140,
+  "ffmpegLogTail": [
+    {
+      "type": "stderr",
+      "message": "[libx264 @ 0x107f550] mb P  I16..4: 46.4% 28.8%  0.3%  P16..4: 13.2%  0.8%  0.3%  0.0%  0.0%    skip:10.2%"
+    },
+    {
+      "type": "stderr",
+      "message": "[libx264 @ 0x107f550] mb B  I16..4:  5.7%  9.6%  0.1%  B16..8: 17.7%  0.9%  0.1%  direct:28.6%  skip:37.4%  L0:48.1% L1:49.3% BI: 2.6%"
+    },
+    {
+      "type": "stderr",
+      "message": "[libx264 @ 0x107f550] final ratefactor: 32.25"
+    },
+    {
+      "type": "stderr",
+      "message": "[libx264 @ 0x107f550] 8x8 transform intra:45.8% inter:36.3%"
+    },
+    {
+      "type": "stderr",
+      "message": "[libx264 @ 0x107f550] coded y,uvDC,uvAC intra: 28.0% 99.8% 99.2% inter: 1.0% 53.7% 36.1%"
+    },
+    {
+      "type": "stderr",
+      "message": "[libx264 @ 0x107f550] i16 v,h,dc,p: 65% 14% 19%  1%"
+    },
+    {
+      "type": "stderr",
+      "message": "[libx264 @ 0x107f550] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu:  4%  6% 84%  1%  1%  1%  1%  1%  2%"
+    },
+    {
+      "type": "stderr",
+      "message": "[libx264 @ 0x107f550] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu:  9% 12% 38%  6% 10%  6%  7%  6%  7%"
+    },
+    {
+      "type": "stderr",
+      "message": "[libx264 @ 0x107f550] i8c dc,h,v,p: 88%  3%  6%  3%"
+    },
+    {
+      "type": "stderr",
+      "message": "[libx264 @ 0x107f550] Weighted P-Frames: Y:0.0% UV:0.0%"
+    },
+    {
+      "type": "stderr",
+      "message": "[libx264 @ 0x107f550] kb/s:7398.67"
+    },
+    {
+      "type": "stderr",
+      "message": "Aborted()"
+    }
+  ]
+}

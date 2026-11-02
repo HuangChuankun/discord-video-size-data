@@ -1,0 +1,12 @@
+lever,unit,value,comparison,record
+resolution 1080p to 720p at CRF 23,bytes,3498466,46.9% smaller than 1080p (6587480 bytes),measure.json
+frame rate 60 to 30 at CRF 20,bytes,9886572,vs 10420480 bytes at 60 fps,measure_fps.json
+frame rate 60 to 30 at CRF 23,bytes,6587480,vs 7320714 bytes at 60 fps,measure_fps.json
+frame rate 60 to 30 at CRF 26,bytes,4495577,vs 5174525 bytes at 60 fps,measure_fps.json
+preset ultrafast,bytes,31574978,"same source, CRF 23",measure_preset.json
+preset veryfast,bytes,4822490,"same source, CRF 23",measure_preset.json
+preset fast,bytes,6424933,"same source, CRF 23",measure_preset.json
+preset medium,bytes,6587480,"same source, CRF 23",measure_preset.json
+preset slow,bytes,6498502,"same source, CRF 23",measure_preset.json
+preset veryslow,bytes,6001195,"same source, CRF 23",measure_preset.json
+audio 64 kbps instead of 96,bytes,1986783,2.01% smaller than 96 kbps on a 10 s clip,measure_audio.json

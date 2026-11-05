@@ -4,20 +4,21 @@ Where this data (and the tool behind it) has been offered to public lists, what 
 back, and what is deliberately not being attempted. Statuses below were read from the
 GitHub API on 2026-11-05; they are not guesses.
 
-## Submitted on 2026-11-03
+## Submitted pull requests
 
 | Target | Pull request | State on 2026-11-05 |
 |---|---|---|
 | `mcuking/Awesome-WebAssembly-Applications` → Inside the browser / Media | [#83](https://github.com/mcuking/Awesome-WebAssembly-Applications/pull/83) | **Merged** 2026-11-03T05:55:06Z. The [README](https://github.com/mcuking/Awesome-WebAssembly-Applications/blob/master/README.md) now carries the ClipFit entry. |
 | `mbasso/awesome-wasm` → Demos | [#369](https://github.com/mbasso/awesome-wasm/pull/369) | **Open**, awaiting review. No maintainer comment yet. |
 | `brandonhimpfen/awesome-ffmpeg` → GUI Tools | [#38](https://github.com/brandonhimpfen/awesome-ffmpeg/pull/38) | **Closed, not merged.** The maintainer declined it: the empirical validation was "quite limited, with only two measured encoding runs", and the project did "not yet establish sustained maintenance or independent user adoption". They offered to review a future submission with a broader reproducible test set. |
+| `torch2424/made-with-webassembly` → showcase | [#146](https://github.com/torch2424/made-with-webassembly/pull/146) | **Open**, submitted 2026-11-05, awaiting review. Adds one `showcase/clipfit.md` file; the README explicitly welcomes new project PRs. |
 
 The third response is the reason [`records/site-8mb-10s-reserve.json`](records/site-8mb-10s-reserve.json)
 and the "Coverage and limits" section now exist. One extra run does not meet the
 maintainer's stated bar, so **no resubmission to that list is being made**. Repeating a
 just-declined submission is not a clean link.
 
-## Checked on 2026-11-05, not submitted
+## Checked on 2026-11-05
 
 - `jacc/awesome-discord` — its `contributing.md` says "If you just created something,
   wait at least 30 days before submitting." The site went live 2026-10-25, which is 11
@@ -27,9 +28,10 @@ just-declined submission is not a clean link.
   the `## JavaScript` section lists libraries and wrappers, not end-user applications,
   and the guide says "Link to the GitHub repo, not npmjs.com". An application entry
   would be off-scope there. Not submitted.
-- `torch2424/made-with-webassembly` — the README says "Contributing new projects is
-  definitely welcome and super appreciated!" and documents the showcase file format.
-  Submitted on 2026-11-05; see the pull request in the table above once created.
+- `torch2424/made-with-webassembly` — this one *was* submitted (see [#146](https://github.com/torch2424/made-with-webassembly/pull/146)
+  above). Its README says "Contributing new projects is definitely welcome and super
+  appreciated!" and documents the showcase metadata format; `showcase.json` is generated
+  by `showcase-build.js` and is gitignored, so the PR adds only one markdown file.
 
 ## Two things that will sink any of these
 

@@ -1,6 +1,6 @@
 # Discord video size data
 
-**Archived on Zenodo with a DOI — cite [10.5281/zenodo.23904987](https://doi.org/10.5281/zenodo.23904987) if you reuse these tables.**
+**Archived on Zenodo with a DOI — cite [10.5281/zenodo.23904986](https://doi.org/10.5281/zenodo.23904986) if you reuse these tables.**
 
 Discord's per-file upload limits, the bitrate those limits leave you, and measured encodes to check the arithmetic against — as CSV, plus a small calculator.
 

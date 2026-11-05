@@ -100,9 +100,9 @@ def write_budget():
 
 
 # --------------------------------------------------------------------------
-# 3. The two encodes the browser tool actually ran, straight from the records.
+# 3. The encodes the browser tool actually ran, straight from the records.
 # --------------------------------------------------------------------------
-RUNS = ["site-10mb-10s-reserve", "site-3mb-10s-audio-reserve"]
+RUNS = ["site-10mb-10s-reserve", "site-3mb-10s-audio-reserve", "site-8mb-10s-reserve"]
 
 
 def write_encodes():

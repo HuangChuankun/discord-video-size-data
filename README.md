@@ -12,10 +12,10 @@ Every number here traces back to a file in [`records/`](records/): either an off
 |---|---|
 | [`data/discord-file-size-limits.csv`](data/discord-file-size-limits.csv) | What each account tier can upload, in bytes, with the official page each figure comes from |
 | [`data/bitrate-budget.csv`](data/bitrate-budget.csv) | For an 8, 10, 20 or 50 MB ceiling and a 15 s to 3 min clip, the video bitrate you can afford |
-| [`data/measured-encodes.csv`](data/measured-encodes.csv) | Two encodes run through a browser ffmpeg.wasm build: what was asked for, what came out |
+| [`data/measured-encodes.csv`](data/measured-encodes.csv) | Three encodes run through a browser ffmpeg.wasm build: what was asked for, what came out |
 | [`data/quality-levers.csv`](data/quality-levers.csv) | What resolution, frame rate, x264 preset and audio bitrate each buy you, measured |
 | [`tools/bitrate_budget.py`](tools/bitrate_budget.py) | The formula as a CLI: target size + duration in, video bitrate out |
-| [`records/`](records/) | The raw JSON each CSV is generated from, including `ffprobe` output for both encodes |
+| [`records/`](records/) | The raw JSON each CSV is generated from, including `ffprobe` output for each encode |
 
 Rebuild every CSV from the records with:
 
@@ -57,17 +57,22 @@ video             5462 kbps
 projected output  20,842,500 bytes
 ```
 
-## The two measured encodes
+## The measured encodes
 
 | Input | Target | Passes | Output | Video asked → measured |
 |---|---|---|---|---|
 | 15,942,580 B, 1280x720 @ 30 fps, no audio track | 10 MB | 2 | 9,253,520 B | 8,274 kbps → overshot to 10,880,120 B, retry at 7,032 kbps → 7,399,220 bps |
 | 5,407,489 B, 1920x1080 @ 60 fps, AAC stereo | 3 MB | 1 | 3,138,651 B | 2,437 kbps → 2,432,889 bps, audio 63,940 bps |
+| 15,942,580 B, 1280x720 @ 30 fps, no audio track | 8 MB | 2 | 7,345,513 B | 6,606 kbps → overshot to 8,685,880 B, retry at 5,615 kbps → 5,872,840 bps |
 
-Both came in under the target they were given. The first one is why a retry rule exists: x264 at a high bitrate can spend more than you asked for, and a single pass is not enough to promise a ceiling.
+All three finished at or under the target on the final pass. The 10 MB and 8 MB runs are the retry rule in action: x264 at a high bitrate can spend more than you asked for, and a single pass cannot promise a ceiling. The 8 MB run is the newest (2026-11-05); its raw record and matching `ffprobe` output are in [`records/`](records/).
+
+## Coverage and limits
+
+These three runs are a check on the arithmetic, not a validation suite. Every one uses a 10 s clip, and only two distinct source files appear (15,942,580 B without an audio track, and 5,407,489 B with one). There is no systematic set across durations, resolutions, frame rates, codecs or container conditions, and no independent reproduction by a third party. Consistent target-size performance across the range of supported media is therefore **not established by this data**. The CSV columns state what was measured; nothing here is an estimate.
 
 ## Licence
 
 Code (`tools/`) is MIT. The CSV files and records are CC BY 4.0 — use them, just say where they came from.
 
-The browser tool these numbers were measured on is at [compressmyclip.com](https://compressmyclip.com/) — same encoder, same reserve, nothing uploaded.
+The browser tool these numbers were measured on is at [compressmyclip.com](https://compressmyclip.com/) — same encoder, same reserve, nothing uploaded. The write-ups behind two of the targets are the [8 MB guide](https://compressmyclip.com/8mb-video-compressor) and the [10 MB guide](https://compressmyclip.com/10mb-video-compressor); each quotes the same run record published here.
